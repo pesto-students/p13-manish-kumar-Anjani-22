@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starting Line Up</title>
+    <style>
+       header
+       {
+            margin-bottom: 20px;
+       }
+       .border-div
+       {
+        position: relative;
+        background-color: white;
+        border: 2px solid black;
+       }
+       .border-text
+       {
+        position: absolute;
+        left: 2%;
+        top:-24px;
+        background-color: white;
+       }
+       div
+       {
+            margin-bottom: 20px;
+       }
+       .radio
+       {
+        margin-left: 6px;
+        margin-right: 4px;
+       }
+       .players-checkbox
+       {
+         left: 1px;
+         position: absolute;
+       }
+    </style>
+</head>
+<body>
+    <header><h1>Starting Lineup</h1></header>
+    <div class="border-div">
+        <p class="border-text">Status</p>
+        <p>
+            <input type="radio" class="radio" name="Draft" value="Draft" checked><label>Draft</label>
+            <input type="radio" class="radio" name="Final" value="Final"><label>Final</label>
+        </p>
+    </div>
+        <label >Date: </label>
+        <select name="date" id="date">
+            <option value="March 20" selected>March 20</option>
+            <option value="March 24" >March 24</option>
+            <option value="April 2" >April 2</option>
+            <option value="April 6" >April 6</option>
+            <option value="April 13" >April 13</option>
+        </select>
+    <div class="border-div" id="Players">
+        <p class="border-text"> Players:</p>
+        <pre class="players-checkbox" >
+            <label class="players-checkbox"> <input type="checkbox" id="Aarav Agarwal" value="Aarav Agarwal">Aarav Agarwal</label>
+            <label class="players-checkbox"> <input type="checkbox" id="Ava Johnson" value="Ava Johnson">Ava Johnson</label>
+            <label class="players-checkbox"> <input type="checkbox" id="Julio Ortiz" value="Julio Ortiz">Julio Ortiz</label>
+            <label class="players-checkbox"> <input type="checkbox" id="Liam Rubio" value="Liam Rubio">Liam Rubio</label>
+            <label class="players-checkbox"> <input type="checkbox" id="Emma Witherspoon" value="Emma Witherspoon">Emma Witherspoon</label>
+            
+            
+        </pre
+        
+    </div>
+    <button type="submit">
+        Submit
+    </button>
+    
+</body>
+</html>
