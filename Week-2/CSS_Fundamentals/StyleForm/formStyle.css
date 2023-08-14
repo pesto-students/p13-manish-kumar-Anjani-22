@@ -29,7 +29,8 @@ input[class="inputbox"]
 }
 textarea
 {
-    width: auto;
+    width: 318px;
+    height: 106px;
 }
 div
 {
