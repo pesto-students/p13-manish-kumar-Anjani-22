@@ -1,4 +1,4 @@
-## Listed below are the module headings, accompanied by their corresponding details for easy navigation to the assignment answers:
+## Listed below are the module headings, accompanied by their details for easy navigation to assignment answers:
 
 
 
