@@ -36,11 +36,11 @@
     padding: 20px;
     color: #fafafa;
 }
-section
-{
-    display:flex;
-    position: absolute;
+section {
+    display: flex;
+    position: relative;
     align-items: center;
+    justify-content: center;
 }
 th
 {
