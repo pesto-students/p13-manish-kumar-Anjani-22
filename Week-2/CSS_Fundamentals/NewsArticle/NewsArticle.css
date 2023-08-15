@@ -1,6 +1,6 @@
 header
 {
-    width:30%;
+    width: 35%;
     margin-bottom: 50px;
 }
 
@@ -11,7 +11,7 @@ body
 .img-wrap {
     display: inline-block;
     float: left;
-    width: 25%; /* Adjust width as needed */
+    width: 20%; /* Adjust width as needed */
     position: relative;
   }
    header > div
