@@ -14,8 +14,17 @@
       <h2>Egypt</h2>
       
       <!-- TODO: Add srcset attribute -->
-      <img src="egypt_600.jpg" alt="Great Sphyinx and pyramid" class="stretch-image">
+      <picture>
+         <!-- For 1x DPR -->
+         <source srcset="egypt_600.jpg 1x" >
+         <!-- For 2x DPR -->
+         <source srcset="egypt_1200.jpg 2x" >
+         <!-- For 3x DPR -->
+         <source srcset="egypt_1800.jpg 3x" >
+         <img src="egypt_600.jpg" alt="Great Sphyinx and pyramid" class="stretch-image">
 
+     </picture>
+      
       <p>Egpyt is a land of enduring beauty and rich culture.
          Explore the capital city of <strong>Cairo</strong>,
          the <strong>Great Pyramids of Giza</strong>, and the
@@ -23,7 +32,10 @@
       </p>
 
       <!-- TODO: Add srcset and sizes attributes -->
-      <img src="luxor_600.jpg" alt="Luxor Temple">
+      <img srcset="luxor_600.jpg 600w, luxor_800.jpg 800w, luxor_1200.jpg 1200w"
+      sizes="(min-width: 700px) 600px, (min-width: 500px) 400px, 200px"
+      src="luxor_600.jpg"
+      alt="Luxor Image">
 
       <p>
          Packages include airfare, lodging, and several guided tours!
@@ -47,7 +59,11 @@
       </ul>
 
       <!-- TODO: Add <picture> -->
-      <img src="hotel_narrow.jpg" alt="Hotel" class="stretch-image">
+         <picture>
+            <source media="(min-width: 500px)" srcset="hotel_wide.jpg">
+            <img src="hotel_narrow.jpg" alt="Hotel" class="stretch-image">
+        </picture>
+      
       
    </main>
    <footer>
