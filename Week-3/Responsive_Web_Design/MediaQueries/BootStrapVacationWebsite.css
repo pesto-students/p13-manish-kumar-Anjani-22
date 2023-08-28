@@ -115,10 +115,15 @@ main > section {
 /* TODO: Add media query for 800px breakpoint */
 @media (min-width:800px)
 {
+
+   .vacation-container
+   {
+      flex-direction: row;
+   }
    .vacation-container > img
    {
       width: 50vw;
-      float: left; /*Why img is not floating left*/
+    /*Why img is not floating left*/
       margin-right: 20px;
      
       
