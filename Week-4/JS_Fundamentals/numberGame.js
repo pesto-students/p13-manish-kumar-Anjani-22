@@ -2,14 +2,15 @@ function playGuessingGame( a, b)
 {
     let numToGuess=a;
     let totalGuess=b;
-    if(b.isNaN())
+    if(isNaN(b))
     {
         totalGuess=10;
     }
     
         let input=prompt(" Enter a number between 1 and 100.");
         let i=0;
-        guessNumber(input, i);
+        let result=guessNumber(input, i);
+        console.log(result);
 
     function guessNumber(input, i,totalGuess)
     {
@@ -39,6 +40,7 @@ function playGuessingGame( a, b)
         }
         else if(num==numToGuess)
         {
+            alert("Congratulations!!!! You guessed the correct number.");
             return i;
         }
     }
