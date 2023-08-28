@@ -1,4 +1,4 @@
-isStrongpassword(password)
+function isStrongpassword(password)
 {
     let l= password.length>=8 ? true : false;
     let passKeyWord= password.toLowerCase().includes("password") ? false:true;
