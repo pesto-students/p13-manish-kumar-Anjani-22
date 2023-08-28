@@ -45,8 +45,8 @@ td
 td + td
 {
     
-    text-align: center;
-    text-indent: 20px;
+    text-align: left;
+    padding-left: 10%;
 }
 
 .offer
