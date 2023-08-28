@@ -119,13 +119,9 @@ main > section {
    {
       width: 50vw;
       float: left; /*Why img is not floating left*/
+      margin-right: 20px;
+     
       
    }
-
-   .vacation-container > div 
-   {
-      margin-left: 20px;
-      
-      
-   }
+     
 }
