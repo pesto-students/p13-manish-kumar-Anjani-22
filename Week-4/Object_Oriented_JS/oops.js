@@ -66,10 +66,20 @@ class BankAccount
     #accountNumber;
     #balance=0;
     
+    constructor(accountHolderName,accountNumber, balance)
+    {
+        this.#accountHolderName= accountHolderName;
+        this.#accountNumber=accountNumber;
+        this.#balance=balance;
+    }
 }
 
 class checkingAccount extends BankAccount
 {
+    constructor(accountHolderName,accountNumber, balance)
+    {
+        super(accountHolderName,accountNumber, balance);
+    }
     deposit(amount, balance)
     {
         this.balance=balance+amount;
@@ -86,6 +96,11 @@ class checkingAccount extends BankAccount
 }
 class savingsAccount extends BankAccount
 {
+    constructor(accountHolderName,accountNumber, balance)
+    {
+        super(accountHolderName,accountNumber, balance);
+    }
+    
     deposit(amount)
     {
         this.balance=this.balance+amount;
@@ -100,8 +115,8 @@ class savingsAccount extends BankAccount
     }
 }
 
-const checkObj=new checkingAccount();
-const savingObj=new savingsAccount();
+const checkObj=new checkingAccount("A", "00912845", 1000);
+const savingObj=new savingsAccount("B", "80912845", 1050);
 
 console.log(checkObj.deposit(1000, 0));
 console.log(checkObj.withdraw(100, 0));
