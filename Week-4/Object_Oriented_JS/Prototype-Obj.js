@@ -24,7 +24,7 @@ function Vehicle(make, model, year)
     this.year=year;    
 }
 
-Vehicle.
+
 
 Vehicle.prototype.getDetails = function () {
     return 'Make: ${this.make}, Model: ${this.model}, Year: ${this.year}';
