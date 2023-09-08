@@ -18,12 +18,9 @@ function getCurrency()
     return getExchangeRate.rates;
 }
 
-getExchangeRate('USD')
+getExchangeRate('USD').then((rate) => {
 
-.then((rate) => {
-
-console.log(rate); // Output: 1.2133 })
-
+console.log(rate);} )
 .catch((error) => {
 
 console.error(error);
