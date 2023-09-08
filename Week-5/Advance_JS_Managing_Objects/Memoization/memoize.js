@@ -36,3 +36,6 @@ function memoize(func)
         }
     }
 }
+
+console.log(memoizationfunc('Sydney'));
+console.log(memoizationfunc('Tokyo'));
