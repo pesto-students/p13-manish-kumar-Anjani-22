@@ -6,7 +6,8 @@ document.addEventListener("DOMContentLoaded", function () {
       renderer: "svg", // or "canvas" or "html"
       loop: true,
       autoplay: true,
-      path: "./data.json", // Replace with your JSON file path
+      path: "https://lottie.host/9ca5789d-376e-4088-93e0-99308786b1a1/w1u6AuAgmV.json"
+      
     };
 
     const animation = lottie.loadAnimation(animationOptions);

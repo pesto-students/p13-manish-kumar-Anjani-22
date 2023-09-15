@@ -25,7 +25,7 @@ function moveImage(x, y) {
    const img = document.querySelector("img");
             
    // Determine location of image
-   let imgX = parseInt(img.style.left);
+   let imgX = parseInt(img.style.left); 
    let imgY = parseInt(img.style.top);
 
    // Determine (x,y) coordinates that center the image 

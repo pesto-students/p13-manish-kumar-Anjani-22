@@ -3,11 +3,13 @@ async function getExchangeRate(currencyCode) {
     const CurrencyCodeObj= await getCurrency();
     try
     {
-        resolve(CurrencyCodeObj[currencyCode]);
+        const numericVal=parseFloat(CurrencyCodeObj[currencyCode]) ;
+        const roundedTo4decimalPlaces=numericVal.toFixed(4);
+        return roundedTo4decimalPlaces;
     }
     catch(error)
     {
-        reject(null);
+        return null;
     }
     
 
