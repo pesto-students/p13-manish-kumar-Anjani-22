@@ -78,12 +78,14 @@ function checkForWinner() {
 
 function newGame() {
   // TODO: Complete the function
-  playerTurn = true;
+  clearTimeout(computerMoveTimeout);
+  computerMoveTimeout = 0;
 
   const buttons = getGameBoardButtons();
   for (let button of buttons) {
     button.className = "";
     button.innerHTML = "";
+    button.disabled = false;
   }
 }
 
@@ -92,6 +94,7 @@ function boardButtonClicked(button) {
   button.classList.add("x");
   button.innerHTML = "X";
   button.disabled = true;
+  switchTurn();
 }
 
 function switchTurn() {
@@ -101,19 +104,18 @@ function switchTurn() {
   switch (status) {
     case 1:
       {
+        playerTurn = !playerTurn;
         if (playerTurn) {
-          turnInfo.innerHTML = "Player(Human) turn";
+          turnInfo.innerHTML = "Human turn";
           const buttons = getGameBoardButtons();
           buttons.addEventListener("click", (event) => {
             if (event.target.tagName == button) {
               boardButtonClicked(event.target);
             }
           });
-          playerTurn = false;
         } else {
           turnInfo.innerHTML = "Computer turn";
-          let computerMoveTimeout = setTimeout(makeComputerMove(), 1000);
-          playerTurn = true;
+          computerMoveTimeout = setTimeout(makeComputerMove, 1000);
         }
       }
       break;
@@ -149,6 +151,6 @@ function makeComputerMove() {
   button[random].classList.add("o");
   button[random].innerHTML = "O";
   button[random].disabled = true;
-  playerTurn = true;
+
   switchTurn();
 }
