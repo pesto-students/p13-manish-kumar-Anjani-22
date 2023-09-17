@@ -49,13 +49,13 @@ function updateScore() {
       selectedRadioButtons.push(radioSelected);
       let name = radioSelected.getAttribute("name");
       if (singleValue.includes(name))
-        radioButtonClassNames[name] = getVal(name, radioSelected.value);
+        radioButtonClassNames[name] = getSingleVal(name, radioSelected.value);
     }
   }
   cons;
 }
 
-function getVal(name, value) {
+function getSingleVal(name, value) {
   switch (name) {
     case AC:
       {
