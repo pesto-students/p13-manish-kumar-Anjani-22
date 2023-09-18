@@ -81,34 +81,6 @@ function updateScore(event) {
 
     let sBase = base_avail + base_integ + base_conf;
 
-    // document.querySelector('input[name="property1"]:checked');
-    // const radioButtonClassNames = [
-    //   "AV",
-    //   "AC",
-    //   "PR",
-    //   "UI",
-    //   "scope",
-    //   "integ",
-    //   "avail",
-    //   "conf",
-    //   "health",
-    //   "sense",
-    // ];
-
-    // let selectedRadioButtons = [];
-    // for (let radioClass of radioButtonClassNames) {
-    //   let radioSelected = document.querySelector(
-    //     `input[name={$radioClass}:checked`
-    //   );
-    //   if (radioSelected) {
-    //     selectedRadioButtons.push(radioSelected);
-    //     let name = radioSelected.getAttribute("name");
-    //     if (combinedClassArray.includes(name))
-    //       radioButtonClassNames[name] = getSingleVal(name, radioSelected.value);
-    //     else {
-    //     }
-    //   }
-    // }
     let sExploitability =
       Exploitability[AC] *
       Exploitability[AV] *
