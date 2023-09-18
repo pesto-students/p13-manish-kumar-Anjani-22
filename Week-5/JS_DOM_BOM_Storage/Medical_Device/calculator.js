@@ -91,7 +91,7 @@ function updateScore(event) {
     if (sBase == 0) {
       score = 0;
     } else {
-      score = sStatus * 3.326 * sBase + 1.1 * sExploitability;
+      score = sStatus * 3.326258289 * sBase + 1.1 * sExploitability;
       score = score.toFixed(1);
     }
 
