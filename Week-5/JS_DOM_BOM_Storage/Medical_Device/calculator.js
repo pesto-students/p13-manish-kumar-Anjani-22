@@ -65,7 +65,7 @@ function updateScore(event) {
   }
 
   //key1=health_N/L/H   //key2=avail_N/L/H    gives eg: Base-availibility[health_N][avail_L]
-  if (classValMap.size() == 11) {
+  if (classValMap.size() == 10) {
     let base_avail =
       Base_availibility[combinedClassValue["health"]][
         combinedClassValue["avail"]
@@ -87,7 +87,13 @@ function updateScore(event) {
       Exploitability[PR] *
       Exploitability[AC] *
       Exploitability[UI];
-    let score = sStatus * 3.326 * sBase + 1.1 * sExploitability;
+    let score;
+    if (sBase == 0) {
+      score = 0;
+    } else {
+      score = sStatus * 3.326 * sBase + 1.1 * sExploitability;
+      score = score.toFixed(1);
+    }
 
     document.getElementById("warning").style.display = "none";
     document.getElementById("score").innerText = score;
