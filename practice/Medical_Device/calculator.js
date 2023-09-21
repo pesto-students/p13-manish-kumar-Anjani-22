@@ -29,19 +29,21 @@ const classValMap = new Map();
 function updateScore(event) {
   let radioButton = event.target;
   let radioClassName = radioButton.getAttribute("name");
+  console.log(radioClassName);
   let radioButtonValue = radioButton.value;
+  console.log(radioButtonValue);
   classValMap.set(radioClassName, radioButtonValue);
-
+  console.log("map size" + classValMap.size);
   if (classValMap.size == 10) {
     let base_avail =
       Base_availibility[classValMap.get("health")][classValMap.get("avail")];
-
+    console.log(base_avail);
     let base_integ =
       Base_Integrity[classValMap.get("health")][classValMap.get("integ")];
-
+    console.log(base_integ);
     let base_conf =
       Base_Confidentiality[classValMap.get("sens")][classValMap.get("conf")];
-
+    console.log(base_conf);
     let sBase = base_avail + base_integ + base_conf;
 
     let sExploitability =
@@ -49,9 +51,20 @@ function updateScore(event) {
       AV[classValMap.get("AR")] *
       PR[classValMap.get("PR")] *
       UI[classValMap.get("UI")];
+    console.log(AC);
+    console.log(AV);
+    console.log(PR);
+    console.log(UI);
+    console.log(AC);
 
+    console.log(AC[classValMap.get("AC")]);
+    console.log(AV[classValMap.get("AV")]);
+    console.log(UI[classValMap.get("UI")]);
+    console.log(PR[classValMap.get("PR")]);
+
+    console.log("exploi " + sExploitability);
     let sStatus = scope[classValMap.get("scope")];
-
+    console.log("STATUS " + sStatus);
     let score;
     if (sBase == 0) {
       score = 0;
@@ -59,8 +72,8 @@ function updateScore(event) {
       score = sStatus * 3.326258289 * sBase + 1.1 * sExploitability;
       score = score.toFixed(1);
     }
-
+    console.log(score);
     document.getElementById("warning").style.display = "none";
-    document.getElementById("score").innerText = score;
+    document.getElementById("score").innerHTML = parseFloat(score);
   }
 }
