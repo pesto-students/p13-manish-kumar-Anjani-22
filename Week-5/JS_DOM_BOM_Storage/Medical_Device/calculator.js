@@ -1,3 +1,10 @@
+//const jsonData = require("./data.json");
+
+//import jsonData from "./data.json";
+//fetch("data.json")
+//.then((data) => data.json())
+//.then((data) => console.log(data));
+//console.log(jsonData);
 document.querySelectorAll('input[type="radio"]').forEach(function (radio) {
   radio.addEventListener("click", updateScore);
 });
@@ -24,6 +31,7 @@ const AV = { AV_N: 0.85, AV_A: 0.62, AV_L: 0.55, AV_P: 0.2 };
 const UI = { UI_N: 0.85, UI_R: 0.62 };
 
 const scope = { scope_U: 1, scope_C: 1.08 };
+
 const classValMap = new Map();
 
 function updateScore(event) {
@@ -46,7 +54,7 @@ function updateScore(event) {
 
     let sExploitability =
       AC[classValMap.get("AC")] *
-      AV[classValMap.get("AR")] *
+      AV[classValMap.get("AV")] *
       PR[classValMap.get("PR")] *
       UI[classValMap.get("UI")];
 
@@ -57,8 +65,11 @@ function updateScore(event) {
       score = 0;
     } else {
       score = sStatus * 3.326258289 * sBase + 1.1 * sExploitability;
+      //
+      console.log(score);
       score = score.toFixed(1);
     }
+    console.log(score);
 
     document.getElementById("warning").style.display = "none";
     document.getElementById("score").innerText = score;
