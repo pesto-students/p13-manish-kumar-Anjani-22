@@ -4,13 +4,6 @@ function isStrongpassword(password)
     let passKeyWord= password.toLowerCase().includes("password") ? false:true;
     let caps=/[A-Z]+/.test(password) ;
 
-    if(l && passKeyWord && caps)
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
+    return l && passKeyWord && caps;
 
 }
