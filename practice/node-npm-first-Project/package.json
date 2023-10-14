@@ -1,5 +1,5 @@
 {
-  "name": "npm-first-project",
+  "name": "node-first-project",
   "version": "1.0.0",
   "description": "First Node practice project",
   "main": "index.js",
