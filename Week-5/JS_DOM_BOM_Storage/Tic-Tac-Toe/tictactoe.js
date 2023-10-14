@@ -143,14 +143,16 @@ function switchTurn() {
 function makeComputerMove() {
   // TODO: Complete the function
   let random = Math.floor(Math.random() * (1 + 8 - 0)) + 0; //Math.floor(Math.random()*(1+High-Low))+Low;
+  console.log(random);
   const buttons = getGameBoardButtons();
+  console.log(buttons);
 
   while (buttons[random].innerHTML != "") {
     random = Math.floor(Math.random() * (1 + 8 - 0)) + 0;
   }
-  button[random].classList.add("o");
-  button[random].innerHTML = "O";
-  button[random].disabled = true;
+  buttons[random].classList.add("o");
+  buttons[random].innerHTML = "O";
+  buttons[random].disabled = true;
 
   switchTurn();
 }
