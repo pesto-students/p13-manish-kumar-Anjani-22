@@ -14,6 +14,10 @@ const quotes = [
     quote: "Quick learning recipe: 20%-learning, 80% Implementation",
   },
   {
+    quote:
+      "Trying different fields just taught me, how much I can save time and be effective in one field, also saved me from regrets",
+  },
+  {
     quote: "You can't do every thing but you can do something",
   },
 
