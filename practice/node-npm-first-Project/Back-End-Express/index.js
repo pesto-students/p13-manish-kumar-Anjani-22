@@ -6,21 +6,6 @@ app.get("/", function (req, res) {
   res.send("Home Route");
 });
 
-app.post("/addQuote", (req, res) => {
-  const quote = req.body.quote;
-
-  db.query(
-    "INSERT INTO posts (quote) VALUES (quote)",
-    [quote],
-    (err, result) => {
-      if (err) {
-        console.log(err);
-      }
-      console.log(result);
-    }
-  );
-});
-
 app.get("/hello", function (req, res) {
   res.send("Hello Route");
 });
