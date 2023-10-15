@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import quotes from "../quotes";
 import MusicGIF from "./MusicSymbol";
 import QuoteHeading from "./QuoteHeading";
+import Quote from "./Quote";
 
 function App() {
   const [quoteIndex, setQuoteIndex] = useState(0);
@@ -17,9 +18,8 @@ function App() {
     return () => clearInterval(interval);
   }, []); // Empty dependency array to run this effect only once
 
-  function addQuote
-  {
-    quotes.push({quote:inputValue});
+  function addQuote() {
+    quotes.push({ quote: inputValue });
   }
   return (
     <div>
@@ -28,15 +28,13 @@ function App() {
       <MusicGIF src="./musicSymbol.png" />
       <Quote quote={quotes[quoteIndex]} />
 
-
       <input
         type="text"
         placeholder="Enter a new quote"
-        value={newQuote}
+        value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
       />
       <button onClick={addQuote}>Add Quote</button>
-
     </div>
   );
 }

@@ -7,6 +7,13 @@ const quotes = [
       "Others help is only helpful, when main pillar of help is from yourself",
   },
   {
+    quote:
+      "History is evident, people have learnt more by doing it than reading it",
+  },
+  {
+    quote: "Quick learning recipe: 20%-learning, 80% Implementation",
+  },
+  {
     quote: "You can't do every thing but you can do something",
   },
 
