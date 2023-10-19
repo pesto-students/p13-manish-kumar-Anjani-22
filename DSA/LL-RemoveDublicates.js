@@ -23,7 +23,7 @@ class LinkedList {
   }
   print() {
     let current = this.head;
-    while (current.next !== null) {
+    while (current !== null) {
       console.log(current.data + " -> ");
       current = current.next;
     }
@@ -32,6 +32,7 @@ class LinkedList {
 
 function removeDublicates(head) {
   const linkedSet = new Set();
+  console.log("inside rd");
   if (!head) {
     return "LinkedList Empty";
   }
@@ -40,16 +41,18 @@ function removeDublicates(head) {
   }
   prev = head;
   currentNode = head.next;
+  console.log("before while");
   while (currentNode != null) {
     let data = currentNode.data;
     if (linkedSet.has(data)) {
-      prev.next = currentNode.next();
+      prev.next = currentNode.next;
     } else {
       linkedSet.add(data);
       prev = prev.next;
       currentNode = currentNode.next;
     }
   }
+  console.log(linkedSet);
 }
 let l = new LinkedList();
 
@@ -59,8 +62,10 @@ l.append("A");
 l.append("B");
 l.append("C");
 l.print();
+console.log("before l.head.....................");
 let head = l.head;
+console.log("before reove dublicate function call.....................");
 
 removeDublicates(head);
-
+console.log(".....................");
 l.print();
