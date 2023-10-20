@@ -3,20 +3,15 @@ import quotes from "../quotes";
 import MusicGIF from "./MusicSymbol";
 import QuoteHeading from "./QuoteHeading";
 import Quote from "./Quote";
+import Pause_Next_Buttons from "./Pause-Resume";
 
 function App() {
   const [quoteIndex, setQuoteIndex] = useState(0);
   const [inputValue, setInputValue] = useState("");
-  useEffect(() => {
-    const interval = setInterval(() => {
-      // Generate a random index for a new quote
-      const randomIndex = Math.floor(Math.random() * quotes.length);
-      setQuoteIndex(randomIndex);
-    }, 7000); // 7 seconds in milliseconds
-
-    // Clear the interval when the component unmounts
-    return () => clearInterval(interval);
-  }, []); // Empty dependency array to run this effect only once
+  setInterval(() => {
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    setQuoteIndex(randomIndex);
+  }, 7000);
 
   function addQuote() {
     quotes.push({ quote: inputValue });
@@ -35,6 +30,7 @@ function App() {
         onChange={(e) => setInputValue(e.target.value)}
       />
       <button onClick={addQuote}>Add Quote</button>
+      <Pause_Next_Buttons />
     </div>
   );
 }

@@ -34,7 +34,31 @@ const quotes = [
   },
 
   {
+    quote: "I have extraordinary business skills",
+  },
+  {
+    quote:
+      "Coding which is most important skill, is/was little alien to me, so trying to master it and I know soon I will rock it",
+  },
+
+  {
     quote: "Life is balancing safety and risk",
+  },
+
+  {
+    quote:
+      "Create businesses with the aim to solve a problem, rather than aiming at profitability, and that itself generates profit, along with increases the efficiency in society.",
+  },
+  {
+    quote:
+      "One who controls mind, controls everything or dont take life too seriously",
+  },
+  {
+    quote: "More than pair programming pair debugging is more beneficial.",
+  },
+  {
+    quote:
+      "Learning is followed by its implementation, else one keeps coming back to square one",
   },
 ];
 
