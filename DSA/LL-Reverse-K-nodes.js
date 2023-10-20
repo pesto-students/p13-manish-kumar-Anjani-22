@@ -36,15 +36,18 @@ function reverse_K_nodes(head, k) {
   let count = 0;
   let last = [];
   let first = [];
-  while (current.next) {
+  while (current) {
+    // trial and error to
     first.push(current);
     prev = null;
-    while (count < k && current) {
+    while (count < k && current.next) {
       let temp = current.next;
       current.next = prev;
       prev = current;
       current = temp;
+      count++;
     }
+    count = 0;
     last.push(prev);
   }
   last.push(current);
@@ -71,6 +74,8 @@ l.append("7");
 l.append("8");
 l.append("9");
 l.append("10");
+//l.append("11");
+//l.append("12");
 console.log("Original List:");
 
 l.print();
