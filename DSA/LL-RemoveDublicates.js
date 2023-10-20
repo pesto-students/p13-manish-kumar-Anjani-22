@@ -39,13 +39,16 @@ function removeDublicates(head) {
   if (!head.next) {
     return head;
   }
-  prev = head;
+  let prev = head;
   currentNode = head.next;
+  linkedSet.add(prev.data);
   console.log("before while");
-  while (currentNode != null) {
+  while (currentNode) {
+    console.log("inside");
     let data = currentNode.data;
     if (linkedSet.has(data)) {
       prev.next = currentNode.next;
+      currentNode = currentNode.next;
     } else {
       linkedSet.add(data);
       prev = prev.next;
