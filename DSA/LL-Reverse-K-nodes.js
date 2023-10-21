@@ -1,39 +1,4 @@
-class Node {
-  constructor(data) {
-    this.data = data;
-    this.next = null;
-  }
-}
-
-class LinkedList {
-  constructor() {
-    this.head = null;
-  }
-
-  append(data) {
-    let newNode = new Node(data);
-    newNode.next = null;
-    if (!this.head) {
-      this.head = newNode;
-    } else {
-      let current = this.head;
-      while (current.next !== null) {
-        current = current.next;
-      }
-      current.next = newNode;
-    }
-  }
-
-  print(head = this.head) {
-    let current = head;
-    while (current !== null) {
-      console.log(current.data + " -> ");
-      current = current.next;
-    }
-  }
-}
-
-// Reverse K Nodes
+import LinkedList from "./LinkedListClass.js";
 function reverse_K_nodes(head, k) {
   let current = head;
   let prev = null;
@@ -43,7 +8,7 @@ function reverse_K_nodes(head, k) {
   while (current) {
     first.push(current);
     prev = null;
-    while (count < k && current) {
+    while (current && count < k) {
       let temp = current.next;
       current.next = prev;
       prev = current;

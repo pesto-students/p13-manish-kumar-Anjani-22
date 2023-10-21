@@ -1,4 +1,4 @@
-import LinkedList from "./LL-RemoveDublicates";
+import LinkedList from "./LinkedListClass.js";
 
 function mergeSortedLL(head1, head2) {
   const head = null;

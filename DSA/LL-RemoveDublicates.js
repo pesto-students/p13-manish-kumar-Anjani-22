@@ -1,35 +1,4 @@
-class Node {
-  constructor(data) {
-    this.data = data;
-    this.next = null;
-  }
-}
-class LinkedList {
-  constructor() {
-    this.head = null;
-  }
-  append(data) {
-    let newNode = new Node(data);
-    newNode.next = null;
-    if (!this.head) {
-      this.head = newNode;
-    } else {
-      let current = this.head;
-      while (current.next !== null) {
-        current = current.next;
-      }
-      current.next = newNode;
-    }
-  }
-  print() {
-    let current = this.head;
-    while (current !== null) {
-      console.log(current.data + " -> ");
-      current = current.next;
-    }
-  }
-}
-
+import LinkedList from "./LinkedListClass.js";
 function removeDublicates(head) {
   const linkedSet = new Set();
   console.log("inside rd");
