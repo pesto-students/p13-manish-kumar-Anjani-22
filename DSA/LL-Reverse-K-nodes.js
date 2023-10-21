@@ -4,10 +4,12 @@ class Node {
     this.next = null;
   }
 }
+
 class LinkedList {
   constructor() {
     this.head = null;
   }
+
   append(data) {
     let newNode = new Node(data);
     newNode.next = null;
@@ -21,6 +23,7 @@ class LinkedList {
       current.next = newNode;
     }
   }
+
   print(head = this.head) {
     let current = head;
     while (current !== null) {
@@ -29,7 +32,8 @@ class LinkedList {
     }
   }
 }
-//Reverse K Nodes
+
+// Reverse K Nodes
 function reverse_K_nodes(head, k) {
   let current = head;
   let prev = null;
@@ -37,10 +41,9 @@ function reverse_K_nodes(head, k) {
   let last = [];
   let first = [];
   while (current) {
-    // trial and error to
     first.push(current);
     prev = null;
-    while (count < k && current.next) {
+    while (count < k && current) {
       let temp = current.next;
       current.next = prev;
       prev = current;
@@ -74,17 +77,15 @@ l.append("7");
 l.append("8");
 l.append("9");
 l.append("10");
-//l.append("11");
-//l.append("12");
-console.log("Original List:");
+l.append("11");
 
+console.log("Original List:");
 l.print();
 
-//can we use print to send variable head
-
-//or how to update head  l with external function, do we need create another function in class LL to update head
 const newHead = reverse_K_nodes(l.head, 3);
 
-console.log("After reverse k nodes List:");
+// Update the head of the LinkedList with the new head
+l.head = newHead;
 
-l.print(newHead);
+console.log("After reverse k nodes List:");
+l.print();
