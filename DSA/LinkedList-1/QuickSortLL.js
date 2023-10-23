@@ -37,3 +37,18 @@ function quickSort(head) {
   beforeCurr.next = pivot;
   pivot.next = afterCurr;
 }
+
+let l1 = new LinkedList();
+l1.append(3);
+l1.append(6);
+l1.append(2);
+l1.append(4);
+l1.append(0);
+l1.append(5);
+l1.append(1);
+
+l1.print();
+
+quickSort(l1.head);
+console.log("........................");
+l1.print();
