@@ -24,7 +24,7 @@ nodeDeletionWithoutHead(nodeToDelete);
 l.print();
 function nodeDeletionWithoutHead(nodeToDelete) {
   if (nodeToDelete === null || nodeToDelete.next === null) {
-    // we are not deleting if element is last because to delete without head we are just updateing nodeToDelete with the data of next node and removing the next node, which is not possible if nodetodelte.next ==null
+    // we are not deleting if element is last because to delete without head we are just updateing nodeToDelete with the data of next node and removing the next node, which is not possible if nodetodelte.next == null
     return;
   }
 

@@ -54,3 +54,5 @@ l.head = newHead;
 
 console.log("After reverse k nodes List:");
 l.print();
+
+export default reverse_K_nodes;
