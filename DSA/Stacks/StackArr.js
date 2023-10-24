@@ -1,6 +1,7 @@
 class Stack {
   constructor() {
     this.items = [];
+    //can I declare top here without intialization
   }
 
   push(value) {
