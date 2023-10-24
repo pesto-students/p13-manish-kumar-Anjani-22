@@ -36,6 +36,10 @@ const quotes = [
   {
     quote: "Life is balancing safety and risk",
   },
+  {
+    quote:
+      "Hardwork is not just doing repeatative tasks, but also courage to do new things and then only growth is there, otherwise you are in a loop",
+  },
 ];
 
 export default quotes;
