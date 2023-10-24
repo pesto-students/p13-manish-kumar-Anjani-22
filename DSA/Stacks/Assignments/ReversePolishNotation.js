@@ -4,7 +4,9 @@ let input = prompt(
   " Enter an array of tokens in RPN format seperated by space"
 );
 
-reversePolishNotation(input);
+let result = reversePolishNotation(input);
+
+console.log(result);
 
 // similar to post fix expression
 function reversePolishNotation(input) {
@@ -25,6 +27,8 @@ function reversePolishNotation(input) {
       stack.push(element);
     }
   }
+
+  return stack.pop();
 }
 function performOperation(operator, first, second) {
   switch (operator) {
