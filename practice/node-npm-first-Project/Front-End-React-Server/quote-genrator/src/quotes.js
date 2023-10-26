@@ -41,8 +41,7 @@ const quotes = [
       "Hardwork is not just doing repeatative tasks, but also courage to do new things and then only growth is there, otherwise you are in a loop",
   },
   {
-    quote:
-      "Implement good habits before it becomes compulsion for fruitful greater results",
+    quote: "Implement good habits before it becomes compulsion",
   },
 ];
 
