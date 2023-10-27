@@ -1,4 +1,6 @@
-import { Node } from "./LinkedList-1/LinkedListClass.js";
+//import { Node } from "./LinkedList-1/LinkedListClass.js";
+
+const { Node } = require("../LinkedList-1/LinkedListClass");
 class Stack {
   constructor() {
     this.top == null; //heaed
@@ -39,4 +41,4 @@ class Stack {
   }
 }
 
-export default Stack;
+module.exports = Stack;

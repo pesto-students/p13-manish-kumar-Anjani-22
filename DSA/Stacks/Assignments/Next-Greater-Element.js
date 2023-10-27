@@ -1,4 +1,6 @@
-import Stack from "./Stacks/StackLL.js";
+//import Stack from "./Stacks/StackLL.js";
+
+const Stack = require("../StackLL");
 function nextGreaterElement(arr) {
   console.log(arr);
   let nge = new Array(arr.length).fill(-1);
