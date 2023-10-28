@@ -1,9 +1,10 @@
 //import { Node } from "./LinkedList-1/LinkedListClass.js";
 
 const { Node } = require("../LinkedList-1/LinkedListClass");
-class Stack {
+class StackLL {
   constructor() {
-    this.top == null; //heaed
+    this.top == null; //head
+    this.size = 0;
   }
   push(element) {
     let newNode = new Node(element);
@@ -12,6 +13,7 @@ class Stack {
       newNode.next = this.top;
       this.top = newNode;
     }
+    this.size++;
   }
   pop() {
     if (!this.isEmpty()) return "Empty Stack";
@@ -19,6 +21,7 @@ class Stack {
       let temp = this.top.next;
       this.top.next = null;
       this.top = temp;
+      this.size--;
     }
     peek();
     {
@@ -30,7 +33,7 @@ class Stack {
     return top === null;
   }
 
-  printStack() {
+  print() {
     if (!this.isEmpty()) return "Empty Stack";
     let current = top;
     let str = "";
@@ -38,7 +41,12 @@ class Stack {
       str = str + current.data + "\n";
       current = current.next;
     }
+    console.log(str);
+  }
+
+  size() {
+    return this.size;
   }
 }
 
-module.exports = Stack;
+module.exports = StackLL;
