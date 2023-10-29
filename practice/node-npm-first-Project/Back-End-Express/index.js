@@ -8,7 +8,6 @@ app.get("/", function (req, res) {
   if (Object.keys(req.index).length === 0) {
     res.send(quoteArr.length);
   } else {
-    // Handle the scenario when query parameters are present
     res.json({ message: "Query parameters present" });
   }
   let index = req.index;
@@ -22,8 +21,8 @@ app.post("/", function (req, res) {
   quoteArr.push({ quote: quote });
 });
 
-app.get("/hello", function (req, res) {
-  res.send("Hello Route");
+app.get("/all-quotes", function (req, res) {
+  res.send(quoteArr);
 });
 
 //DB Connection

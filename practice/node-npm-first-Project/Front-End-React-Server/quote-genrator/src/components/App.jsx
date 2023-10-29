@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import MusicGIF from "./MusicSymbol";
 import QuoteHeading from "./QuoteHeading";
 import Quote from "./Quote";
+import AllQuotes from "./AllQuotes";
 
 async function App() {
   const url = "http://localhost:300";
@@ -28,6 +29,7 @@ async function App() {
     const options = { type: "POST", body: inputValue };
     fetch(url + "/", options);
   }
+
   return (
     <div>
       <MusicGIF src="./CodeSymbol.jpg" />
@@ -42,6 +44,7 @@ async function App() {
         onChange={(e) => setInputValue(e.target.value)}
       />
       <button onClick={addQuote}>Add Quote</button>
+      <AllQuotes />
     </div>
   );
 }
