@@ -18,4 +18,4 @@ function reverseQueue(queue) {
 }
 
 const output = reverseQueue(queue);
-console.log(`Reversed  ${output}`);
+console.log(`Reversed Queue  ${output}`);

@@ -19,6 +19,9 @@ class QueueArr {
   size() {
     return this.item.length;
   }
+  print() {
+    this.item.forEach(console.log(`  ${x}`));
+  }
 }
 
 const queue = new QueueArr();
