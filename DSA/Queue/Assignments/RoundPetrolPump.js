@@ -3,7 +3,7 @@ const queue = new Queue();
 let input = prompt("Enter space seperated integers");
 let nums = input.split(" ").map(Number);
 
-function PetrolPumpRound(nums) {
+function petrolPumpRound(nums) {
   const k = nums.shift();
   let startIndex = 0;
   let remainingPetrol = 0;
@@ -19,5 +19,6 @@ function PetrolPumpRound(nums) {
     }
     remainingPetrol = petrol[i] - dis[i] + remainingPetrol;
   }
+  if (remainingPetrol < 0) return -1;
   return startIndex + 1;
 }
