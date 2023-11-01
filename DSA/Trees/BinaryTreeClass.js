@@ -55,6 +55,7 @@ class BinaryTreeWithDistinctElements {
         node.right = this.recursiveDelete(node.value, node.right);
       } //innner else
     } //outer else
+    return node;
   } //method
 
   minValue(minValue, node) {
