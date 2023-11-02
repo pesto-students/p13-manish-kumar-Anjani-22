@@ -57,7 +57,7 @@ function levelOrderTraversal(input) {
   map = levelOrderTraversal((min = 0), (max = 0), map, (index = 0), tree);
 
   map.forEach((key, value) => {
-    console.log(`${key} => ${value}`);
+    console.log(`${key} : ${value}`);
   });
 
   //   const queue = [];
@@ -85,7 +85,7 @@ levelOrderTraversal(min, max, map, index, tree);
     map.get(`Level + ${index}`).push(tree[i]);
   }
 
-  if (max == tree.length) return map;
+  if (max === tree.length) return map;
 
   return levelOrderTraversal(2 * min + 1, 2 * max + 2, map, index + 1, tree);
 }
