@@ -80,7 +80,7 @@ function levelOrderTraversal(input) {
 
 levelOrderTraversal(min, max, map, index, tree);
 {
-  map.set(`Level + ${index} `, []);
+  map.set(`Level ${index} `, []);
   for (let i = min; i <= max; i++) {
     map.get(`Level + ${index}`).push(tree[i]);
   }
