@@ -53,20 +53,39 @@ function levelOrderTraversal(input) {
     } //outer else
   } //for
 
-  const queue = [];
-  const root = tree[0];
-  queue.push(root);
-  const levelOrderTraversalstr = "";
-  while (queue.length !== 0) {
-    let currentNode = queue.shift();
-    let index = tree.indexOf(currentNode);
-    let leftChild = tree[2 * index + 1];
-    let rightChild = tree[2 * index + 2];
+  let map = new Map();
+  map = levelOrderTraversal((min = 0), (max = 0), map, (index = 0), tree);
 
-    if (left !== -1) queue.push(leftChild);
-    if (left !== -1) queue.push(rightChild);
+  map.forEach((key, value) => {
+    console.log(`${key} => ${value}`);
+  });
 
-    levelOrderTraversalstr += currentNode + " "; //How to print each level order in different line
+  //   const queue = [];
+  //   const root = tree[0];
+  //   queue.push(root);
+  //   const levelOrderTraversalstr = "";
+  //   while (queue.length !== 0) {
+  //     let currentNode = queue.shift();
+  //     let index = tree.indexOf(currentNode);
+  //     let leftChild = tree[2 * index + 1];
+  //     let rightChild = tree[2 * index + 2];
+
+  //     if (left !== -1) queue.push(leftChild);
+  //     if (left !== -1) queue.push(rightChild);
+
+  //     levelOrderTraversalstr += currentNode + " "; //How to print each level order in different line
+  //   }
+  //return levelOrderTraversalstr;
+}
+
+levelOrderTraversal(min, max, map, index, tree);
+{
+  map.set(`Level + ${index} `, []);
+  for (let i = min; i <= max; i++) {
+    map.get(`Level + ${index}`).push(tree[i]);
   }
-  return levelOrderTraversalstr;
+
+  if (max == tree.length) return map;
+
+  return levelOrderTraversal(2 * min + 1, 2 * max + 2, map, index + 1, tree);
 }
