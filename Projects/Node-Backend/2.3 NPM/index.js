@@ -4,7 +4,7 @@
 
 import xxx from "sillyname";
 
-import x from "superheroes";
+import x from "quotes-of-paradoxical-world";
 
-const y = x.all; //genrates all names, x.random() individual names
-console.log(`Check superName ${typeof y}`);
+//genrates all names, x.random() individual names
+console.log(`Check superName ${x}`);
