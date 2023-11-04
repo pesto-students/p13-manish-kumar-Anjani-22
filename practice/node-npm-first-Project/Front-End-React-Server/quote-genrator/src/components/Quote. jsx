@@ -1,9 +1,0 @@
-import React from "react";
-
-function Quote(props) {
-    return (
-        <p className="quote">{props.quote}</p>
-    );
-}
-
-export default Quote;
