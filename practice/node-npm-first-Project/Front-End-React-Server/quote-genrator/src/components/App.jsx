@@ -17,8 +17,9 @@ async function App() {
 
       const options = { type: "GET", index: randomIndex };
 
-      let quoteRes = fetch(url + "/", options).then((res) => res.json);
-      setQuote(quoteRes.quote);
+      let quoteRes = fetch(url + "/", options)
+        .then((res) => res.json)
+        .then((quoteRes) => setQuote(quoteRes.quote));
     }, 9000); // 9 seconds in milliseconds
 
     // Clear the interval when the component unmounts
