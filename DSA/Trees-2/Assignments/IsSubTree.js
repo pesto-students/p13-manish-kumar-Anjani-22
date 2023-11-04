@@ -20,3 +20,4 @@ function identical(mainTreeRootNode, subTreeRootNode) {
   identical(mainTreeRootNode.left, subTreeRootNode);
   identical(mainTreeRootNode.right, subTreeRootNode);
 }
+// for index based just pass left and right child index to iterate down and up
