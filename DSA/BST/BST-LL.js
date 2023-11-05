@@ -1,11 +1,13 @@
-function bst_toLinkedList(BSTNode, LLnode) {
+function bst_toLinkedList(BSTNode, LL) {
   //LLNode null
-  if (!BSTNode.left && !BSTNode.right) return BSTNode;
-  left = bst_toLinkedList(BSTNode);
+  if (!BSTNode.left && !BSTNode.right) return BSTNode.value;
+  if (!BSTNode.left) LL.insert(BSTNode.value);
+  else {
+    leftValue = bst_toLinkedList(BSTNode);
 
-  if (!LLnode) LLnode = left;LLnode.next = BSTNode
-  else LLnode.next = left;
-
-  LLnode.next = BSTNode;
-  bst_toLinkedList(BSTNode);
+    LL.insert(leftValue);
+    LL.insert(BSTNode.value);
+  }
+  rightValue = bst_toLinkedList(BSTNode.right, LL);
+  if (!rightValue) LL.insert(rightValue);
 }
