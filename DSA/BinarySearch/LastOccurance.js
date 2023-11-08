@@ -10,5 +10,5 @@ function helper(arr, l, h, target) {
     if (mid === arr.length - 1 || arr[mid + 1] > target) return mid;
     else return helper(arr, mid + 1, h, target);
   }
-  retunr -1;
+  return -1;
 }
