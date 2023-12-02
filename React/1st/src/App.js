@@ -7,7 +7,7 @@ import Title from "./title";
 function App() {
   return (
     <>
-      <Title title="BookList" className="title" />
+      <Title title="Book List" className="title" />
       <div className="flex-container">
         {books.map((book) => (
           <Book book={book} />
