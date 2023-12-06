@@ -5,19 +5,20 @@ export default function Book({ book }) {
   return (
     <div>
       <button
-        class="btn btn-primary"
+        class="btn btn-light"
         type="button"
         data-toggle="collapse"
-        data-target="#multiCollapseExample2"
+        data-target={`#${book.title}`}
         aria-expanded="false"
-        aria-controls={book.title}
-        onClick={setIsOpen((isOpen) => !isOpen)}
+        aria-controls={`${book.title}`}
+        onClick={() => setIsOpen(!isOpen)}
       >
+        {" "}
         {isOpen ? "-" : "+"}
       </button>
 
       <BookTitle bookTitle={book.title} />
-      <BookDetail book={book} />
+      {isOpen && <BookDetail book={book} />}
     </div>
   );
 }
@@ -25,7 +26,6 @@ export default function Book({ book }) {
 function BookDetail({ book }) {
   return (
     <div id={book.title}>
-      <h2>{book.title}</h2>
       <h3>{book.author}</h3>
       <h4>{book.year}</h4>
     </div>

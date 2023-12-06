@@ -14,44 +14,49 @@ export default function BookForm({ addBook }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     addBook(book);
+    setAuthor("");
+    setTitle("");
+    setYear("");
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div className="form-group">
-        <label htmlFor="title">Title</label>
-        <input
-          type="text"
-          className="form-control"
-          id="title"
-          placeholder="Title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
+    <div>
+      <form onSubmit={handleSubmit} className="item">
+        <div className="form-group">
+          <label htmlFor="title">Title</label>
+          <input
+            type="text"
+            className="form-control"
+            id="title"
+            placeholder="Title"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
 
-        <label htmlFor="author">Author</label>
-        <input
-          type="text"
-          className="form-control"
-          id="author"
-          placeholder="Author"
-          value={author}
-          onChange={(e) => setAuthor(e.target.value)}
-        />
+          <label htmlFor="author">Author</label>
+          <input
+            type="text"
+            className="form-control"
+            id="author"
+            placeholder="Author"
+            value={author}
+            onChange={(e) => setAuthor(e.target.value)}
+          />
 
-        <label htmlFor="year">Select Year:</label>
-        <input
-          type="number"
-          placeholder="YYYY"
-          value={year}
-          onChange={(e) => setYear(e.target.value)}
-          min="1000" // Set the minimum allowed year
-          max="2100" // Set the maximum allowed year
-        />
-      </div>
-      <button type="submit" className="btn btn-primary">
-        Submit
-      </button>
-    </form>
+          <label htmlFor="year">Select Year:</label>
+          <input
+            type="number"
+            placeholder="YYYY"
+            value={year}
+            onChange={(e) => setYear(e.target.value)}
+            min="1000" // Set the minimum allowed year
+            max="2100" // Set the maximum allowed year
+          />
+        </div>
+        <button type="submit" className="btn btn-primary">
+          Submit
+        </button>
+      </form>
+    </div>
   );
 }

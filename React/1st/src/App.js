@@ -17,11 +17,13 @@ function App() {
     setBooks((prevbooks) => [...prevbooks, book]);
   }
   return (
-    <>
+    <div>
       <Title title="Book List" className="title" />
-      <BookList books={books} />
-      <BookForm addBook={addBook} />
-    </>
+      <div className="form">
+        <BookList books={books} />
+        <BookForm addBook={addBook} />
+      </div>
+    </div>
   );
 }
 
