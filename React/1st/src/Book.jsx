@@ -1,21 +1,30 @@
 import React, { useState } from "react";
 
-export default function Book({ book }) {
+export default function Book({ book, onDelete }) {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div>
-      <button
-        class="btn btn-light"
-        type="button"
-        data-toggle="collapse"
-        data-target={`#${book.title}`}
-        aria-expanded="false"
-        aria-controls={`${book.title}`}
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        {" "}
-        {isOpen ? "-" : "+"}
-      </button>
+      <div className="flex-Button-Container">
+        <button
+          class="btn btn-light"
+          type="button"
+          data-toggle="collapse"
+          data-target={`#${book.title}`}
+          aria-expanded="false"
+          aria-controls={`${book.title}`}
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          {" "}
+          {isOpen ? "-" : "+"}
+        </button>
+        <button
+          class="btn btn-light"
+          type="button"
+          onClick={() => onDelete(book.title)}
+        >
+          Delete
+        </button>
+      </div>
 
       <BookTitle bookTitle={book.title} />
       {isOpen && <BookDetail book={book} />}

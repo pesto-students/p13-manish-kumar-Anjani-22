@@ -16,11 +16,17 @@ function App() {
   function addBook(book) {
     setBooks((prevbooks) => [...prevbooks, book]);
   }
+
+  function handleDelete(delTitle) {
+    setBooks((prevbooks) =>
+      prevbooks.filter((book) => book.title !== delTitle)
+    );
+  }
   return (
     <div>
       <Title title="Book List" className="title" />
       <div className="form">
-        <BookList books={books} />
+        <BookList books={books} onDelete={handleDelete} />
         <BookForm addBook={addBook} />
       </div>
     </div>

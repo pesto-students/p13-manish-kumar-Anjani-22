@@ -41,3 +41,8 @@ form {
   border-radius: 25px;
   font-size: 40px;
 }
+
+.flex-Button-Container {
+  display: flex;
+  justify-content: space-between;
+}
