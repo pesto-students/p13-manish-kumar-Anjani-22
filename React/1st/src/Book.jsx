@@ -18,11 +18,12 @@ export default function Book({ book, onDelete }) {
           {isOpen ? "-" : "+"}
         </button>
         <button
+          id="deleteBtn"
           class="btn btn-light"
           type="button"
           onClick={() => onDelete(book.title)}
         >
-          Delete
+          ❌ Delete
         </button>
       </div>
 
