@@ -14,7 +14,14 @@ const bookList = [
 function App() {
   const [books, setBooks] = useState(bookList);
   function addBook(book) {
-    setBooks((prevbooks) => [...prevbooks, book]);
+    books.some(
+      (currBook) =>
+        currBook.title.toLowerCase == book.title.toLowerCase &&
+        currBook.author.toLowerCase == book.author.toLowerCase &&
+        currBook.year == book.year
+    )
+      ? alert(`${book.title} already exists`)
+      : setBooks((prevbooks) => [...prevbooks, book]);
   }
 
   function handleDelete(delTitle) {
