@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import BookForm from "./BookForm";
 import "./style.css";
 import Title from "./title";
@@ -13,12 +13,24 @@ const bookList = [
 
 function App() {
   const [books, setBooks] = useState(bookList);
+  console.log("first");
+  useEffect(() => {
+    console.log("inside useEfect");
+    return () => {
+      //cleanUp , after unmouting of componenet, wrt App.jsx here
+    };
+  }, []); //after mounting component, all code of componenet executed, rendered once, Ui shown
+  useEffect(() => {
+    console.log("inside useEffect 2");
+    console.log({ books });
+  }, [books]);
   function addBook(book) {
+    console.log({ books, book });
     books.some(
       (currBook) =>
-        currBook.title.toLowerCase == book.title.toLowerCase &&
-        currBook.author.toLowerCase == book.author.toLowerCase &&
-        currBook.year == book.year
+        currBook.title.toLowerCase() === book.title.toLowerCase() &&
+        currBook.author.toLowerCase() === book.author.toLowerCase() &&
+        currBook.year === book.year
     )
       ? alert(`${book.title} already exists`)
       : setBooks((prevbooks) => [...prevbooks, book]);
@@ -29,6 +41,7 @@ function App() {
       prevbooks.filter((book) => book.title !== delTitle)
     );
   }
+  console.log("last");
   return (
     <div>
       <Title title="Book List" className="title" />

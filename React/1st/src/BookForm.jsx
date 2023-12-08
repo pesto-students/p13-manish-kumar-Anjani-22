@@ -48,7 +48,7 @@ export default function BookForm({ addBook }) {
             type="number"
             placeholder="YYYY"
             value={year}
-            onChange={(e) => setYear(e.target.value)}
+            onChange={(e) => setYear(parseInt(e.target.value))}
             min="1000" // Set the minimum allowed year
             max="2100" // Set the maximum allowed year
           />

@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import BookDetail from "./BookDetail";
 
 export default function Book({ book, onDelete }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,15 +30,6 @@ export default function Book({ book, onDelete }) {
 
       <BookTitle bookTitle={book.title} />
       {isOpen && <BookDetail book={book} />}
-    </div>
-  );
-}
-
-function BookDetail({ book }) {
-  return (
-    <div id={book.title}>
-      <h3>{book.author}</h3>
-      <h4>{book.year}</h4>
     </div>
   );
 }
