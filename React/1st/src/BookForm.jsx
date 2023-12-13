@@ -53,7 +53,11 @@ export default function BookForm({ addBook }) {
             max="2100" // Set the maximum allowed year
           />
         </div>
-        <button type="submit" className="btn btn-primary">
+        <button
+          type="submit"
+          className="btn btn-primary"
+          disabled={!title.length || !author.length}
+        >
           Submit
         </button>
       </form>
