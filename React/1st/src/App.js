@@ -13,17 +13,7 @@ const bookList = [
 
 function App() {
   const [books, setBooks] = useState(bookList);
-  console.log("first");
-  useEffect(() => {
-    console.log("inside useEfect");
-    return () => {
-      //cleanUp , after unmouting of componenet, wrt App.jsx here
-    };
-  }, []); //after mounting component, all code of componenet executed, rendered once, Ui shown
-  useEffect(() => {
-    console.log("inside useEffect 2");
-    console.log({ books });
-  }, [books]);
+
   function addBook(book) {
     console.log({ books, book });
     books.some(
