@@ -122,14 +122,14 @@ function switchTurn() {
       break;
     case 2:
       {
-        turnInfo.innerHTML = "HUMAN_WINS";
+        turnInfo.innerHTML = " 🎉 HUMAN_WINS 😎";
         playerTurn = false;
         disableButtons();
       }
       break;
     case 3:
       {
-        turnInfo.innerHTML = "COMPUTER_WINS";
+        turnInfo.innerHTML = "💻 COMPUTER_WINS 🎈";
         playerTurn = false;
         disableButtons();
       }
