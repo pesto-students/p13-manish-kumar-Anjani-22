@@ -94,6 +94,7 @@ function boardButtonClicked(button) {
   button.classList.add("x");
   button.innerHTML = "X";
   button.disabled = true;
+  button.classList.add("disabled");
   switchTurn();
 }
 
@@ -115,20 +116,22 @@ function switchTurn() {
           });
         } else {
           turnInfo.innerHTML = "Computer turn";
-          computerMoveTimeout = setTimeout(makeComputerMove, 1000);
+          computerMoveTimeout = setTimeout(makeComputerMove, 300);
         }
       }
       break;
     case 2:
       {
-        turnInfo.innerHTML = "HUMAN_WINS";
+        turnInfo.innerHTML = " 🎉 HUMAN_WINS 😎";
         playerTurn = false;
+        disableButtons();
       }
       break;
     case 3:
       {
-        turnInfo.innerHTML = "COMPUTER_WINS";
+        turnInfo.innerHTML = "💻 COMPUTER_WINS 🎈";
         playerTurn = false;
+        disableButtons();
       }
       break;
     case 4:
@@ -148,9 +151,18 @@ function makeComputerMove() {
   while (buttons[random].innerHTML != "") {
     random = Math.floor(Math.random() * (1 + 8 - 0)) + 0;
   }
-  button[random].classList.add("o");
-  button[random].innerHTML = "O";
-  button[random].disabled = true;
+  buttons[random].classList.add("o");
+  buttons[random].innerHTML = "O";
+  buttons[random].disabled = true;
+  buttons[random].classList.add("disabled");
 
   switchTurn();
+}
+
+function disableButtons() {
+  const buttons = getGameBoardButtons();
+  for (let button of buttons) {
+    button.disabled = true;
+    button.classList.add("disabled");
+  }
 }
