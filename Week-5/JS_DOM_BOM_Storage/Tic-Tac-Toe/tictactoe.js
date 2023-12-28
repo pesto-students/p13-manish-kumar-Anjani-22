@@ -94,6 +94,7 @@ function boardButtonClicked(button) {
   button.classList.add("x");
   button.innerHTML = "X";
   button.disabled = true;
+  button.classList.add("disabled");
   switchTurn();
 }
 
@@ -153,6 +154,7 @@ function makeComputerMove() {
   buttons[random].classList.add("o");
   buttons[random].innerHTML = "O";
   buttons[random].disabled = true;
+  buttons[random].classList.add("disabled");
 
   switchTurn();
 }
@@ -161,5 +163,6 @@ function disableButtons() {
   const buttons = getGameBoardButtons();
   for (let button of buttons) {
     button.disabled = true;
+    button.classList.add("disabled");
   }
 }
