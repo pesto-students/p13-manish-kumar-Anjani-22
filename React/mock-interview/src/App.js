@@ -1,14 +1,17 @@
-import { useContext } from "react";
-import AnimalUI from "./AnimalUI";
+import CommentSystem from "./Comments-v2/CommentSystem";
+import { AnimalProvider } from "./MockInterview/AnimalProvider";
 
-import { AnimalContext } from "./AnimalProvider";
+import Component from "./MockInterview/Component";
+import MockIndex from "./MockInterview/MockIndex";
 
 function App() {
-  const { animals, index, setIndex } = useContext(AnimalContext);
-
   return (
-    <div className="App">
-      <AnimalUI index={index} setIndex={setIndex} animals={animals} />
+    <div>
+      <AnimalProvider>
+        <MockIndex />
+        <Component />
+      </AnimalProvider>
+      <CommentSystem />
     </div>
   );
 }

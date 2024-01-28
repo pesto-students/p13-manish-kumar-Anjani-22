@@ -1,0 +1,69 @@
+/* App.css */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    text-align: center;
+    color: #333;
+  }
+  
+  /* CommentList.css */
+  ul.comment-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  ul.comment-list > li {
+    margin-bottom: 10px;
+  }
+  
+  /* Comment.css */
+  .comment-container {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  .comment-container p {
+    margin: 0;
+  }
+  
+  .comment-container button {
+    margin-top: 5px;
+  }
+  
+  /* CommentForm.css */
+  .comment-form {
+    margin-top: 10px;
+  }
+  
+  .comment-form textarea {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .comment-form button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .comment-form button:hover {
+    background-color: #45a049;
+  }
+  
