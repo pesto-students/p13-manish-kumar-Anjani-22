@@ -1,0 +1,46 @@
+<!-- views/index.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ... Head content ... -->
+  </head>
+  <body>
+    <h1>Simple Note Taking App</h1>
+
+    <!-- Create Note Form -->
+    <h2>Create a New Note</h2>
+    <form action="/notes/create" method="POST">
+      <label for="title">Title:</label>
+      <input type="text" id="title" name="title" required />
+      <label for="content">Content:</label>
+      <textarea id="content" name="content" required></textarea>
+      <button type="submit">Create Note</button>
+    </form>
+
+    <!-- List of Notes -->
+    <h2>Your Notes</h2>
+    <ul>
+      <% notes.forEach((note) => { %>
+      <li>
+        <h3><%= note.title %></h3>
+        <p><%= note.content %></p>
+
+        <form
+          action="/notes/edit/<%= note.id %>"
+          method="PUT"
+          style="display: inline"
+        >
+          <button type="submit">Delete</button>
+        </form>
+        <form
+          action="/notes/delete/<%= note.id %>"
+          method="POST"
+          style="display: inline"
+        >
+          <button type="submit">Delete</button>
+        </form>
+      </li>
+      <% }); %>
+    </ul>
+  </body>
+</html>
