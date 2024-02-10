@@ -1,7 +1,10 @@
 // app.js
 const express = require("express");
+const methodOverride = require("method-override");
 const app = express();
 const port = 3000; // Change this to your desired port
+
+app.use(methodOverride("_method"));
 
 // Middleware to parse request bodies
 app.use(express.urlencoded({ extended: true }));
