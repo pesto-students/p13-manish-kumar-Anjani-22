@@ -1,19 +1,16 @@
 // app.js
 const express = require("express");
-const methodOverride = require("method-override");
+//const methodOverride = require("method-override");
 const app = express();
-const port = 3000; // Change this to your desired port
+const port = 3000;
 
-app.use(methodOverride("_method"));
+//app.use(methodOverride("_method"));
 
-// Middleware to parse request bodies
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// Static files (CSS, JS, etc.)
 app.use(express.static("public"));
 
-// Set the view engine to EJS
 app.set("view engine", "ejs");
 
 // Define your routes

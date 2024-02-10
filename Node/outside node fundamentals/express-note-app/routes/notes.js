@@ -14,6 +14,7 @@ router.post("/create", (req, res) => {
 router.put("/edit/:id", (req, res) => {
   const { id } = req.params;
   const { title, content } = req.body;
+  console.log(title, content);
   const updatedNote = Note.update(Number(id), title, content);
   if (updatedNote) {
     res.redirect("/");
