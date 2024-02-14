@@ -1,28 +1,74 @@
 body {
-   font-family: Roboto, Helvetica, sans-serif;
+  font-family: "Roboto", "Helvetica", sans-serif;
+  background: radial-gradient(circle at center, #002244, #4f6d7a);
+  /*background-color: #002244;*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
 }
 
-.x {
-   color: red;
-}
-
-.o {
-   color: blue;
+h1 {
+  color: #f9f6ee;
 }
 
 #gameBoard {
-   font: 85px arial, sans-serif;
-   margin: 3px;
-
-   display: grid;
-   grid-template-columns: 100px 100px 100px;
-   grid-template-rows: 100px 100px 100px;
-   grid-gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  grid-gap: 10px;
 }
 
-#gameBoard > button {
-   border: 1px solid LightSkyBlue;
-   text-align: center;
-   font-size: 100%;
-   font-family: inherit;
+button {
+  border: 2px solid #87ceeb;
+  background-color: #fff;
+  font-size: 36px;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  border-radius: 10%;
+  box-shadow: 0 0 5px rgba(0, 45, 98, 0.5) inset;
+}
+
+button:hover {
+  background-color: #87ceeb;
+  color: #fff;
+  box-shadow: 0 0 5px rgba(0, 45, 98, 0.5) inset;
+}
+
+button.x {
+  color: red;
+}
+
+button.o {
+  color: blue;
+}
+
+button.disabled {
+  pointer-events: none;
+}
+
+#turnInfo {
+  color: #f9f6ee;
+  margin-top: 20px; /* Add any other styles you need */
+  font-size: 25px;
+  font-weight: bolder;
+}
+
+#newGameButton {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #87ceeb;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+#newGameButton:hover {
+  background-color: #4682b4;
+  color: #fff;
 }
