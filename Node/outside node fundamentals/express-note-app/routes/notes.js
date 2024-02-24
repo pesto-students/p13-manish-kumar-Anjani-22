@@ -7,11 +7,12 @@ const Note = require("../models/Note");
 router.post("/create", (req, res) => {
   const { title, content } = req.body;
   const newNote = Note.create(title, content);
+
   res.redirect("/");
 });
 
 // Edit an existing note
-router.put("/edit/:id", (req, res) => {
+router.post("/edit/:id", (req, res) => {
   const { id } = req.params;
   const { title, content } = req.body;
   console.log(title, content);

@@ -9,6 +9,7 @@ class Note {
   }
 
   static getAll() {
+    console.log("check notes added  getall?", notes);
     return notes;
   }
 
@@ -20,6 +21,7 @@ class Note {
     const id = notes.length + 1;
     const newNote = new Note(id, title, content);
     notes.push(newNote);
+    console.log("check notes added ?", notes);
     return newNote;
   }
 
