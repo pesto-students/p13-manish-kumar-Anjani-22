@@ -1,0 +1,10 @@
+{
+  "name": "string",
+  "nationality": "string",
+  "movies_acted_in": [
+    {
+      "$ref": "movies",
+      "$id": "ObjectId"
+    }
+  ]
+}
