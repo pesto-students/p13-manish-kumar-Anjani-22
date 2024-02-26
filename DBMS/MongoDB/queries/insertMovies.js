@@ -165,15 +165,23 @@ async function insert() {
       // Add more movies...
     ];
 
-    moviesDoc.forEach((doc) => {
-      const movieId = moviesCollection.insertOne(doc);
-      doc.actors.forEach((actorId) => {
-        update("actors", actorId, movieId, "movies_actedin");
-      });
+    await Promise.all(
+      moviesDoc.map(async (doc) => {
+        const movieId = await moviesCollection.insertOne(doc).insertedId;
+        doc.actors.map(async (actorId) => {
+          await update("actors", actorId, movieId, "movies_actedin");
+        });
 
-      update("directors", doc.director, movieId, "movies_directed");
-    });
+        await update("directors", doc.director, movieId, "movies_directed");
+      })
+    );
 
+    /** await Promise.all(moviesData.map(async (movie) => {
+      await moviesCollection.updateOne(
+        { "_id": movie._id },
+        { "$set": { "director": ObjectId(), "actors": [ObjectId(), ObjectId()] } }
+      );
+    })); */
     var moviesId = moviesCollection.insertMany();
 
     console.log(`${result.insertedCount} movies inserted`);
