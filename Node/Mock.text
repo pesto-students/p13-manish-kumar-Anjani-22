@@ -1,0 +1,15 @@
+customer table- city
+in each city
+
+select city, count(customerName) as custCount from cutomertable custCount>5 groupby(City) having custCount>5;
+
+full csv comparaison
+
+front-csv1,csv2->backend-> equal
+hapijs, koajs, crypto, passport, ttl, cors,,fe-url>google,
+pre-flight, 
+
+cron- 5pm notification, reminder mails, analytical report
+mails-backend 1000 mail, sent-grade-50 mails, 20, promise.map
+
+crons, worker thread in express
