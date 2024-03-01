@@ -66,19 +66,20 @@
     </div>
 
     <script>
+      const editNoteForm = document.getElementById(`editNoteForm${note.id}`);
+      const toggleFormButton = document.getElementById(
+        `toggleEditFormButton${note.id}`
+      );
+
       // JavaScript code to toggle form visibility
       document.addEventListener("DOMContentLoaded", function () {
-        const editNoteForm = document.getElementById("editNoteForm");
-        const toggleFormButton = document.getElementById(
-          "toggleEditFormButton"
-        );
-
         // Initially hide the edit note form
         editNoteForm.style.display = "none";
       });
 
       // Toggle edit note form visibility when button is clicked
       toggleFormButton.addEventListener("click", function () {
+        console.log("Edit form");
         if (editNoteForm.style.display === "none") {
           editNoteForm.style.display = "block";
         } else {

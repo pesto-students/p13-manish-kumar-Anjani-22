@@ -1,0 +1,15 @@
+{
+  "title": "string",
+  "release_year": "number",
+  "genre": "string",
+  "director": {
+    "$ref": "directors",
+    "$id": "ObjectId"
+  },
+  "actors": [
+    {
+      "$ref": "actors",
+      "$id": "ObjectId"
+    }
+  ]
+}
